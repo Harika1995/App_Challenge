@@ -8,9 +8,11 @@ namespace app.Models
 {
     public class Developer
 {
-    public int Id { get; set; }
+        [Range(0, 50, ErrorMessage = "Please enter valid integer Number")]
+        public int Id { get; set; }
 
-    public string Given { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
+        public string Given { get; set; }
 
     public string Family { get; set; }
 
@@ -20,7 +22,8 @@ namespace app.Models
 
     public string Skills { get; set; }
 
-    public int Rating { get; set; }
+        [Range(0, 20, ErrorMessage = "Please enter valid integer Number")]
+        public int Rating { get; set; }
 
     [Display(Name = "Created Date")]
     [DataType(DataType.Date)]
